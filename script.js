@@ -9,7 +9,7 @@ const opcoescor = [
    "Rosa-Claro"
 ]
 
-
+let tamanhoCaixa = ""
 let numImagemSelecionada = 1;
 let numTamanhoSelecionado = 1;
 let numCorSelecionada = 1;
@@ -23,7 +23,7 @@ function atualizarImagemSelecionada(){
 function atualizarTamanho(){
  const opcaoTamanhoSelecionado = document.querySelector('[name="opcao-tamanho"]:checked').id.charAt(0)
  numTamanhoSelecionado = opcaoTamanhoSelecionado
- const tamanhoCaixa = opcoesTamanho[numTamanhoSelecionado]
+ tamanhoCaixa = opcoesTamanho[numTamanhoSelecionado]
  tituloProduto.innerText = `Pulseira loop esportiva azul-inverno para caixa de ${tamanhoCaixa}`
  console.log(numTamanhoSelecionado);
  if(tamanhoCaixa === "41 mm"){
@@ -37,8 +37,7 @@ function atualizarCorSelecionada(){
   const corSelecionada = document.querySelector('[name="opcao-cor"]:checked').id.charAt(0)
   numCorSelecionada = corSelecionada
   let cor = opcoescor[(numCorSelecionada)]
-  tituloProduto.innerText = `Pulseira loop esportiva ${cor.toLowerCase()} para caixa de 45 mm`
+  tituloProduto.innerText = `Pulseira loop esportiva ${cor.toLowerCase()} para caixa de ${tamanhoCaixa}`
   console.log(cor);
 
 }
-atualizarCorSelecionada()
